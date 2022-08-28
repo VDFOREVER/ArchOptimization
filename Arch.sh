@@ -4,10 +4,10 @@ case $xz in
     1)
     read -p "'NVIDIA' or 'AMD', 'INTEL'? -> " answer
     case $answer in
-        NVIDIA) sudo pacman -S nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader lib32-opencl-nvidia opencl-nvidia libxnvctrl ;
+        NVIDIA) sudo pacman -S linux-headers nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader lib32-opencl-nvidia opencl-nvidia libxnvctrl ;
         sudo mkinitcpio -P; sudo nvidia-xconfig ; sudo nvidia-settings;;
-        AMD) sudo pacman -S mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader;;
-        INTEL) sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader;;
+        AMD) sudo pacman -S linux-headers mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader;;
+        INTEL) sudo pacman -S linux-headers mesa lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader;;
     esac;;
     2) read -r -p "1.nvidia tweaks 2.Microcode 3.software -> " soft
     case $soft in
