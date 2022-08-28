@@ -21,7 +21,7 @@ case $xz in
         3) read -r -p "Do you care about loading time? (I recommend [n]) [y/n] -> " st
         case $st in
             y) sudo pacman -S base-devel git gvfs ccache rng-tools ; sudo systemctl enable --now rngd; sudo pacman -S dbus-broker ; sudo systemctl enable --now dbus-broker.service ; sudo systemctl enable fstrim.timer ; sudo fstrim -v /;;
-            n) sudo pacman -S base-devel git gvfs ccache ; git clone https://aur.archlinux.org/ananicy.git ; cd ananicy ; makepkg -sric ; sudo systemctl enable --now ananicy ; cd .. ; sudo rm -R ananicy
+            n) sudo pacman -S base-devel git gvfs ccache ; git clone https://aur.archlinux.org/ananicy.git ; cd ananicy ; makepkg -sric ; sudo systemctl enable --now ananicy ; cd .. ; sudo rm -R ananicy ;
             sudo pacman -S haveged ; sudo systemctl enable haveged ; sudo pacman -S dbus-broker ; sudo systemctl enable --now dbus-broker.service ; sudo systemctl enable fstrim.timer ; sudo fstrim -v /;;
         esac;;
     esac;;
